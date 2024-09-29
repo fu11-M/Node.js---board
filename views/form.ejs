@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글 작성</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        main {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-title {
+            display: grid;
+            grid-template-columns: 2fr 8fr;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        select, input[type="text"], textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        input[type="submit"] {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <article>
+            <h1>글 작성</h1>
+            <form action="/post" method="post">
+                <div class="form-title">
+                    <label for="subject">주제</label>
+                    <select name="subject" id="subject" required>
+                        <option value="">주제 선택</option>
+                        <option value="자유">자유</option>
+                        <option value="맛집">맛집</option>
+                        <option value="공부">공부</option>
+                        <option value="고민">고민</option>
+                    </select>
+                    <label for="title">제목</label>
+                    <input type="text" id="title" name="title" placeholder="제목" required>
+                </div>
+                <label for="content">내용</label>
+                <textarea id="content" name="content" rows="10" placeholder="내용 작성" required></textarea>
+                <input type="submit" value="등록하기">
+            </form>
+        </article>
+    </main>
+</body>
+</html>
